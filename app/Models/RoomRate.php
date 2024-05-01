@@ -15,5 +15,12 @@ class RoomRate extends Model
      * @var string
      */
     protected $table = 'room_rate';
+
+    /**
+     * The primary key associated with the table.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'id';
     
 }
