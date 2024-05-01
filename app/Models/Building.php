@@ -10,6 +10,20 @@ class Building extends Model
     use HasFactory;
 
     /**
+     * Overrides created date
+     * 
+     * @var string
+     */
+    const CREATED_AT = 'added_date';
+
+    /**
+     * Overrides updated date
+     * 
+     * @var string
+     */
+    const UPDATED_AT = 'updated_date';
+
+    /**
      * The table associated with the model.
      * 
      * @var string
