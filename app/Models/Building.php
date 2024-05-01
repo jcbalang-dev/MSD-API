@@ -16,4 +16,11 @@ class Building extends Model
      */
     protected $table = 'building';
 
+    /**
+     * The primary key associated with the table.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
 }
