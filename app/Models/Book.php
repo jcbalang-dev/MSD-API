@@ -16,4 +16,11 @@ class Book extends Model
      */
     protected $table = 'book';
 
+    /**
+     * The primary key associated with the table.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
 }
