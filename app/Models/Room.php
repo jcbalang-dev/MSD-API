@@ -14,6 +14,13 @@ class Room extends Model
      * 
      * @var string
     */
-    protected $table = "room";
+    protected $table = 'room';
+
+    /**
+     * The primary key associated with the table.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'id';
 
 }
