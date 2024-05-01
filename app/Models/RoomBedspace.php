@@ -16,4 +16,11 @@ class RoomBedspace extends Model
      */
     protected $table = 'room_bedspace';
 
+    /**
+     * The primary key associated with the table.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
 }
