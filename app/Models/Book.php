@@ -37,4 +37,28 @@ class Book extends Model
      */
     protected $primaryKey = 'id';
 
+    /**
+     * The attributes that are mass assignable.
+     * 
+     * @var array<datetime, float, string, int>
+     */
+    protected $fillable = [
+        'checkin_date',
+        'checkin_time',
+        'checkin_actual_date',
+        'checkin_actual_time',
+        'checkout_date',
+        'checkout_time',
+        'checkout_actual_date',
+        'checkout_actual_time',
+        'payment',
+        'payment_mode',
+        'payment_refno',
+        'extension_fee',
+        'extension_fee_mode',
+        'extension_refno',
+        'status',
+        'added_by',
+        'updated_by',
+    ];
 }
