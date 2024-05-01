@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -61,4 +62,41 @@ class Book extends Model
         'added_by',
         'updated_by',
     ];
+
+    /**
+     * Default attributes
+     * 
+     * @var array<string>
+     */
+    protected $attributes = [
+        'payment_mode' => 'CASH',
+        'extension_fee_mode' => 'CASH',
+        'status' => 'CHECKIN',
+    ];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        // defaulting check in date/time
+        $this->attributes['checkin_date'] = $this->attributes['checkin_date'] ?? Carbon::now()->format('Y-m-d');
+        $this->attributes['checkin_time'] = $this->attributes['checkin_time'] ?? Carbon::now()->format('H:i:s');
+
+        // defaulting actual check in date/time
+        $this->attributes['checkin_actual_date'] = $this->attributes['checkin_actual_date'] ?? Carbon::now()->format('Y-m-d');
+        $this->attributes['checkin_actual_time'] = $this->attributes['checkin_actual_time'] ?? Carbon::now()->format('H:i:s');
+
+        // defaulting check out date/time
+        $this->attributes['checkout_date'] = $this->attributes['checkout_date'] ?? Carbon::now()->format('Y-m-d');
+        $this->attributes['checkout_time'] = $this->attributes['checkout_time'] ?? Carbon::now()->format('H:i:s');
+
+        // defaulting actual check out date/time
+        $this->attributes['checkout_actual_date'] = $this->attributes['checkout_actual_date'] ?? Carbon::now()->format('Y-m-d');
+        $this->attributes['checkout_actual_time'] = $this->attributes['checkout_actual_time'] ?? Carbon::now()->format('H:i:s');
+        
+        // defaulting initial payment
+        $this->attributes['payment'] = 150.00;
+        $this->attributes['extension_fee'] = 0.0;
+
+    }
 }
