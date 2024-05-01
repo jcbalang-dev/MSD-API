@@ -16,4 +16,11 @@ class Guest extends Model
      */
     protected $table = 'guest';
 
+    /**
+     * The primary key associated with the table.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
 }
